@@ -1,0 +1,60 @@
+.contact_bar {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  color: azure;
+}
+
+.mobile_menu {
+  text-align: center;
+  padding-top: 3px;
+}
+
+#navbar_desktop {
+  display: none;
+}
+
+.mobile_bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+}
+
+.mobile_menu {
+  background-color: aqua;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding-top: 20px;
+}
+
+.contact {
+  background-color: white;
+}
+
+.fa-x {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+}
+
+.navbar_mobile_btns {
+  display: flex;
+  gap: 30px;
+  font-size: 30px;
+}
+
+.spam {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.item_tags {
+  display: flex;
+}
+
+.hiden {
+  display: none;
+}

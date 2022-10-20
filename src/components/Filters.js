@@ -24,12 +24,13 @@ const Filters = () => {
     }
   ];
   const brands = useSelector((state) => state.brands)
+  const arrows = ">"
 
   return (
     <div className="menu_container">
       <h2>Categorias</h2>
       <ul className="filters">
-        {filters.map((i) => (<li className="filter_btn"><i className={i.icon} /> {i.cat}</li>))}
+        {filters.map((i) => (<li className="filter_btn"><i className={i.icon} /> {i.cat} {arrows}</li>))}
       </ul>
       <div className="brands">
         {console.log(brands)}
