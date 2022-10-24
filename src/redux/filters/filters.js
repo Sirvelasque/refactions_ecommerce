@@ -1,12 +1,19 @@
 const UPDATEBRANDS = 'refactions_ecoomerce/filters/UPDATEBRANDS';
 
-const defaultBrands = ["Alcatel", "Huawei", "Iphone", "LG",]
+const defaultBrands = []
 
-export default function brandsReducer(State = defaultBrands, action) {
+export default function filtersReducer(State = defaultBrands, action) {
   switch(action.type) {
     case UPDATEBRANDS:
-      return action.newbrands;
+      return action.filters;
     default:
       return State;
   }
+}
+
+export const newFilter = (filter) => async (dispatch) => {
+  dispatch ({
+    type: UPDATEBRANDS,
+    filters: filter
+  })
 }
