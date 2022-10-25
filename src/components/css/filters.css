@@ -1,7 +1,7 @@
+
 #Catalogue {
   width: 100vw;
-  height: 110vh;
-
+  height: 98vh;
 }
 
 .switch {
@@ -131,4 +131,45 @@ input:checked + .slider:before {
   margin-bottom: 0;
 }
 
+#filters_plus {
+  position: fixed;
+  transition: transform .6s
+  cubic-bezier(0, .52, 0, 2);
+  background-color: #2196F3;
+  height: 100vh;
+  width: 60vw;
+  display: flex;
+  padding-left: 5px;
+  border: 1px solid black;
+  overflow-y: scroll;
+  z-index: 4px;
+}
 
+#filters_plus.show {
+  transform: translate3d(40vw, -80vh, 1px);
+  overflow: hidden;
+  position: fixed;
+}
+
+#filters_plus.hide-l {
+  transform: translate3d(100vw, -90vh, 0);
+  position: fixed;
+}
+
+#filters_plus .filters li {
+  margin-bottom: 30px;
+}
+
+#sub_filters {
+  padding-top: 40px;
+  overflow-y: scroll;
+  height: 100%;
+  scroll-margin: 30px;
+  scroll-padding: 50px;
+}
+
+.sub_box {
+  height: fit-content;
+  padding: 300px 0;
+  margin-bottom: 90vh;
+}

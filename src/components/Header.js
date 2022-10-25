@@ -29,25 +29,9 @@ const Header = () => {
       </div>
         <MainMenu toggleMenu={toggleMenu}/>
       </div>
-      <div className={contact ? "contact" : "contact hiden-l"}>
-      <div className="exit" onClick={ () => toggleContact() }>
-        <i className="fa-solid fa-x"></i>
-      </div>
-      </div>
-    {/* <div className="contact_bar">
-      <div className="about">
-        Nosotros | Blog | Contacto | 
-      </div>
-      <div className="login_btns">
-        Iniciar sesion | Registrarme
-      </div>
-    </div>
-    <div className="header_foot">
-      <form className="search"><input type="text" id="search" name="search" /> <button type="submit"><i className="fas fa-search"></i></button> </form>
-      </div> */}
     </div>
     {/* --------------- */}
-    <div id="navbar_desktop">
+    {/* <div id="navbar_desktop">
     <div className="contact_bar">
       <div className="about">
         Nosotros | Blog | Contacto | 
@@ -71,7 +55,7 @@ const Header = () => {
       <form className="search"><input type="text" id="search" name="search" /> <button type="submit"><i className="fas fa-search"></i></button> </form>
     </div>
       <Filters />
-    </div>
+    </div> */}
   </header>
 );
 };

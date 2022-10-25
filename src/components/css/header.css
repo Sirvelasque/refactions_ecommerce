@@ -26,11 +26,11 @@
   background: rgb(126,122,233);
   background: linear-gradient(0deg, rgba(126,122,233,1) 32%, rgba(139,136,236,1) 58%);
   text-align: center;
-  padding-top: 3px;
   position: fixed;
-  width: 100%;
-  top: 0;
-  padding-top: 20px;
+  width: 100vw;
+  height: 99vh;
+  top: 3px;
+  padding-top: 10px;
   transition: transform .3s
               cubic-bezier(0, .52, 0, 1);
 }
@@ -47,8 +47,8 @@
 
 .fa-x {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 35px;
   font-size: 30px;
   color: black;
 }
@@ -89,6 +89,8 @@
   transition: .4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
+
+
 /* ------- */
 .hiden-r {
   transform: translate3d(100vw, 0, 0);
@@ -108,6 +110,6 @@
 }
 
 #Catalogue.show {
-  transform: translate3d(-3.8vw, -2.4vh, 0);
+  transform: translate3d(-3vw, 0vh, 0);
   overflow: hidden;
 }
