@@ -146,7 +146,7 @@ input:checked + .slider:before {
 }
 
 #filters_plus.show {
-  transform: translate3d(40vw, -80vh, 1px);
+  transform: translate3d(40vw, -93vh, 1px);
   overflow: hidden;
   position: fixed;
 }
@@ -161,15 +161,16 @@ input:checked + .slider:before {
 }
 
 #sub_filters {
-  padding-top: 40px;
+  padding-top: 15px;
   overflow-y: scroll;
   height: 100%;
-  scroll-margin: 30px;
-  scroll-padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sub_box {
   height: fit-content;
-  padding: 300px 0;
-  margin-bottom: 90vh;
+  min-width: 315px;
+  transition: transform .7;
 }
