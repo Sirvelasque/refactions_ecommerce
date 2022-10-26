@@ -9,39 +9,80 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 const Filters = () => {
-  const [value, setValue] = useState([200, 2017])
+  const [value, setValue] = useState([200, 2017]);
+  const [showsub, setShowsub] = useState(false);
+  let counting = 0;
+
+  const filt = useSelector((state) => state.brands);
+  const [subFilter, setSubFilter] = useState('Pantalla');
+
   const filters = [
+    {
+      cat: "Sistema",
+      icon: "fas fa-battery-three-quarters",
+      subs: ['Bateria', 'Procesador', 'Ram'],
+    },
     {
       cat: "Pantalla",
       icon: "fas fa-mobile",
+      subs: ['Flex', 'Panel de pantalla tactil'],
     },
     {
       cat: "Camara",
       icon: "fa-solid fa-camera",
-    },
-    {
-      cat: "Bateria",
-      icon: "fas fa-battery-three-quarters",
+      subs: ['Camara', 'Flash'],
     },
     {
       cat: "Sonido",
       icon: "fas fa-music",
+      subs: ['Bocina', 'Microfono'],
     },
     {
       cat: "Accesorios",
       icon: "fab fa-dribbble",
+      subs: ['Protector', 'Utiles'],
     }
   ];
+  const subFilters = {
+    "Sistema": [],
+    "Pantalla": [],
+    "Camara": [],
+    "Sonido": [],
+    "Accesorios": [],
+  }
+  const subFiltersArray = [];
   const brands = ["Alcatel", "Iphone", "Lg", "Samsung", "Xiaomi"];
-  const filt = useSelector((state) => state.brands);
+
+  const [checkedState, setCheckedState] = useState(
+    new Array(11).fill(false)
+  );
+
+  const handleSub = (i) =>{
+    setSubFilter(i.cat);
+    setShowsub(true);
+  }
+
+  const toggleSub = () => {
+    setShowsub(!showsub)
+  }
+
   const arrows = () => (
     <div className="arrows">
     {filters.map(()=> (<div>{'>'}</div>))}
     </div>
   );
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleSubCheckbox = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+    index === position ? !item : item
+  );
+
+  setCheckedState(updatedCheckedState);
+  }
 
   return (
     <div className="menu_container">
@@ -55,14 +96,25 @@ const Filters = () => {
       </label>
       <div className="list_container">
       <ul className="filters">
-        {filters.map((i) => (<li className="filter_btn"><i className={i.icon} /> {i.cat}</li>))}
+        {filters.map((i) => {
+          for(let j = 0; j < i.subs.length; j+=1){
+            const num = counting;
+            subFilters[i.cat].push(<li className="filter_btn" onClick={() => handleSubCheckbox(num)}><input type="checkbox" className="brand_check" checked={checkedState[num]}/> {i.subs[j]}</li>);
+            counting += 1;
+          }
+          subFiltersArray.push(subFilters[i.cat]);
+          return(
+          <li className="filter_btn" onClick={() => handleSub(i)}><i className={i.icon} /> {i.cat}</li>
+          );
+        }
+        )}
       </ul>
         {arrows()}
       </div>
       <hr/>
+
       <div className="brands_container">
       <div className="brands">
-        {console.log(brands)}
         {brands.map((i) => (
         <div className="brand">
           <input type="checkbox" className="brand_check"/> 
@@ -85,6 +137,22 @@ const Filters = () => {
         > 
         </Slider>
         </Box>
+      </div>
+
+
+      <div id="filters_plus" className={showsub ? "show" : "hide-l"}>
+        <div className="exit" onClick={ () => toggleSub() }>
+          <i className="fa-solid fa-x"></i>
+        </div>
+          <div id="sub_filters">
+            {filters.map((i)=>(
+              <div className="sub_box">
+                {/* <h3>{i.cat}</h3> */}
+                <hr />
+                {subFilter === i.cat ? <ul className="filters">{subFilters[i.cat]}</ul> :<div></div>}
+              </div>
+            ))}
+          </div>
       </div>
     </div>
   )
