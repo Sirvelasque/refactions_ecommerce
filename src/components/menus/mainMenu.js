@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Filters from "../Filters";
 
@@ -17,25 +18,29 @@ const MainMenu = ({toggleMenu}) => {
       name:'Inicio',
       icon:'fa-solid fa-house',
       k:1,
-      task:"",
+      task: toggleAll,
+      link:"/",
     },
     {
       name:'Catalogo',
       icon:'fa-solid fa-dice-d6',
       k:2,
       task: toggleShow,
+      link:"/Catalogo",
     },
     {
       name:'Quienes somos',
       icon:'fa-solid fa-book-open-reader',
       k:3,
-      task:""
+      task: toggleAll,
+      link:"/Detalles",
     },
     {
       name:'Contactanos',
       icon:'fa-solid fa-phone',
       k:4,
-      task:""
+      task: toggleAll,
+      link:"/",
     },
   ];
 
@@ -48,7 +53,13 @@ const MainMenu = ({toggleMenu}) => {
   return (
     <div id="main_menu" className='list_container'>
       <ul id="main_menu_list" className="filters">
-        {menuItems.map((i)=>(<li className="filter_btn" key={i.k} onClick={ () => toggleShow(i) }> <i className={i.icon} ></i> {i.name} </li>))}
+        {menuItems.map((i)=>(
+          <li className="filter_btn" key={i.k} onClick={ () => toggleShow(i) }>
+            <NavLink to={i.link}>
+              <i className={i.icon} > </i> {i.name} 
+            </NavLink>
+          </li>
+          ))}
       </ul>
       {arrows()}
 
