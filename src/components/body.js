@@ -7,13 +7,13 @@ import './css/body.css'
 const Body = () => {
 
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="Catalogue" element={<Catalogue />} />
-      <Route path="details" element={<BuySec />} />
+      <Route path="Catalogo" element={<Catalogue />} />
+      <Route path="Detalles" element={<BuySec />} />
     </Routes>
-    </BrowserRouter>
+    // </BrowserRouter>
   )
 
 }

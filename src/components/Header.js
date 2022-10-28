@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Filters from "./Filters";
 import MainMenu from "./menus/mainMenu";

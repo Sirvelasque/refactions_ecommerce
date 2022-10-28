@@ -2,7 +2,7 @@ const BuySec = () => {
 
   return (
     <div>
-      buy section
+      Detalles
     </div>
   )
 
