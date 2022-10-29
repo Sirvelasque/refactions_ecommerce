@@ -19,14 +19,18 @@ const updateItems = () => async (dispatch) => {
   const items = [
     {
       id: 1,
-      name: 'rt-hex',
-      tags: ['screen', 'cellphone', 'iphone'],
+      name: 'rt-hex2200',
+      prize: 900,
+      brand: 'Iphone',
+      tags: ['Pantalla', 'Flex',],
       img: 'https://cart-products.cdn.ifixit.com/cart-products/1YVWyB6gy6pesSbH.medium',
     },
     {
       id: 2,
-      name: 'lp-hex',
-      tags: ['screen', 'cellphone', 'samsung'],
+      name: 'lp-hex123',
+      prize: 750,
+      brand: 'Samsung',
+      tags: ['Pantalla', 'Panel tactil',],
       img: 'https://cart-products.cdn.ifixit.com/cart-products/1YVWyB6gy6pesSbH.medium',
     },
   ]

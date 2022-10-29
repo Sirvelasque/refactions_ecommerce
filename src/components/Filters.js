@@ -1,7 +1,8 @@
 import { Slider } from "@mui/material";
 import Box from "@mui/material/Box";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { newFilterBrand, quitBrand } from "../redux/filters/filters";
 import './css/filters.css'
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -11,9 +12,9 @@ import '@fontsource/roboto/700.css';
 const Filters = () => {
   const [value, setValue] = useState([200, 2017]);
   const [showsub, setShowsub] = useState(false);
+  const dispatch = useDispatch();
   let counting = 0;
 
-  const filt = useSelector((state) => state.brands);
   const [subFilter, setSubFilter] = useState('Pantalla');
 
   const filters = [
@@ -56,6 +57,9 @@ const Filters = () => {
   const [checkedState, setCheckedState] = useState(
     new Array(11).fill(false)
   );
+  const [brandsState, setBrandsState] = useState(
+    new Array(4).fill(false)
+  );
 
   const handleSub = (i) =>{
     setSubFilter(i.cat);
@@ -80,8 +84,24 @@ const Filters = () => {
     const updatedCheckedState = checkedState.map((item, index) =>
     index === position ? !item : item
   );
-
+  
   setCheckedState(updatedCheckedState);
+  }
+
+  const sendBrand = (brand) => {
+    dispatch(newFilterBrand(brand));
+  }
+
+  const takeBrand = (brand) => {
+    dispatch(quitBrand(brand));
+  }
+
+  const handdleBrands = (position) => {
+    const updatedBrandState = brandsState.map((item, index) =>
+    index === position ? !item: item
+    );
+    updatedBrandState ? sendBrand(brands[position]) : takeBrand(brands[position]);
+    setBrandsState(updatedBrandState);
   }
 
   return (
@@ -115,9 +135,9 @@ const Filters = () => {
 
       <div className="brands_container">
       <div className="brands">
-        {brands.map((i) => (
+        {brands.map((i, num) => (
         <div className="brand">
-          <input type="checkbox" className="brand_check"/> 
+          <input type="checkbox" className="brand_check" checked={brandsState[num]} onChange={()=> handdleBrands(num)}/> 
           <span>{i}</span>
         </div>
         ))}
@@ -147,7 +167,6 @@ const Filters = () => {
           <div id="sub_filters">
             {filters.map((i)=>(
               <div className="sub_box">
-                {/* <h3>{i.cat}</h3> */}
                 <hr />
                 {subFilter === i.cat ? <ul className="filters">{subFilters[i.cat]}</ul> :<div></div>}
               </div>
