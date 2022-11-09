@@ -1,0 +1,35 @@
+@media screen and (min-width: 1000px) {
+  #navbar_mobile {
+    display: none;
+  }
+
+  #navbar_desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact_bar {
+    width: 100%;
+    padding: 5px 30px;
+  }
+
+  .conctact_bar_btns .fa-brands {
+    margin: 0 8px;
+  }
+
+  .header_foot {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search {
+    margin-top: 12px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+  }
+}

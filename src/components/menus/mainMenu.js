@@ -66,6 +66,7 @@ const MainMenu = ({toggleMenu}) => {
         <i className="fa-solid fa-x"></i>
       </div>
         <Filters />
+        <button type="button" className="ready-btn" onClick={ () => toggleAll() }>Listo</button>
       </div>
     </div>
   )

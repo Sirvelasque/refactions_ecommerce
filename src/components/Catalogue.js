@@ -20,7 +20,7 @@ const Catalogue = () => {
       <div key={i.id} className="item">
         <img alt="item" src={i.img} />
         <div className="item_info">
-          <div className="brand">{i.brand} X</div>
+          <div className="cataloge_brand">{i.brand} X</div>
           <div className="item_name">{i.name}</div>
           <div className="item_tags">
           {i.tags.map((tag)=>(<span className="tag">{tag} </span>))}
