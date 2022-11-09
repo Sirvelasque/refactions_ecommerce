@@ -21,6 +21,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    background-color: rgba(126,122,233,1);
   }
   
   .search {
@@ -31,5 +32,22 @@
     position: absolute;
     top: 40px;
     left: 20px;
+  }
+
+  .desktop_filters {
+    position: fixed;
+    top:75px;
+  }
+
+  .desktop_filters .search {
+    display: none;
+  }
+
+  .desktop_filters .menu_container {
+    width: 270px;
+    min-width: fit-content;
+    padding-top: 1px;
+    border: 3px solid rgb(109, 105, 221);;
+    background-color: rgb(232, 232, 240);
   }
 }

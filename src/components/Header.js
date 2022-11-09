@@ -53,6 +53,9 @@ const Header = () => {
       <div className="logo">Logo</div>
       <form className="search"><input type="text" id="search" name="search" /> <button type="submit"><i className="fas fa-search"></i></button> </form>
     </div>
+    <div className="desktop_filters">
+    <Filters />
+    </div>
     </div>
   </header>
 );

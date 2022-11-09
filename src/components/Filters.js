@@ -146,7 +146,7 @@ const Filters = () => {
       <hr />
       <div className="ranges">
         <h3>Precio</h3>
-        <Box sx={{width:300}}>
+        <Box sx={{width:240}}>
         <Slider
           getAriaLabel={() => 'Año'}
           value={value}
