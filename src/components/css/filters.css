@@ -138,7 +138,7 @@ input:checked + .slider:before {
 #filters_plus {
   position: fixed;
   transition: transform .6s
-  cubic-bezier(0.7, 0.3, 0, -1);
+  cubic-bezier(0.2, 0.3, 0, 0);
   background-color: #2196F3;
   height: 100vh;
   width: 60vw;

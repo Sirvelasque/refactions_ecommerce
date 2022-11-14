@@ -44,7 +44,7 @@
   }
 
   .desktop_filters .menu_container {
-    width: 270px;
+    width: 20px;
     min-width: fit-content;
     padding-top: 1px;
     border: 3px solid rgb(109, 105, 221);;
@@ -52,11 +52,12 @@
   }
 
   #filters_plus.show {
-    transform: translate3d(20vw, -70vh, 0);
+    transform: translate3d(262px, -65vh, 0);
     overflow: hidden;
     position: fixed;
     z-index: -1;
     width: 260px;
+    height: 85%;
   }
 
   #filters_plus.hide-l {
