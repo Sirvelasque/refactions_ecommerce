@@ -50,4 +50,23 @@
     border: 3px solid rgb(109, 105, 221);;
     background-color: rgb(232, 232, 240);
   }
+
+  #filters_plus.show {
+    transform: translate3d(20vw, -70vh, 0);
+    overflow: hidden;
+    position: fixed;
+    z-index: -1;
+    width: 260px;
+  }
+
+  #filters_plus.hide-l {
+    transform: translate3d(-40vw, -70vh, 0);
+    position: fixed;
+    z-index: -1;
+    width: 260px;
+  }
+
+  #sub_filters {
+    overflow-y: hidden;
+  }
 }
