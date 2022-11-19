@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./css/login.css"
 
 const Login = () => {
   const database = [
@@ -60,6 +61,7 @@ const Login = () => {
           <button type="submit">Entrar</button>
         </div>
       </form>
+      {isSubmitted ? <div>Dentro!</div> : <div>Ingrese a su cuenta para continuar</div>}
     </div>
   )
 }
