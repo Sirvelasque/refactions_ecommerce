@@ -61,7 +61,7 @@
   }
 
   #filters_plus.hide-l {
-    transform: translate3d(-40vw, -70vh, 0);
+    transform: translate3d(100px, -70vh, 0);
     position: fixed;
     z-index: -1;
     width: 260px;
