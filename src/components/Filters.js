@@ -12,6 +12,7 @@ import '@fontsource/roboto/700.css';
 const Filters = () => {
   const [value, setValue] = useState([200, 2017]);
   const [showsub, setShowsub] = useState(false);
+  const [query, setQuery] = useState("")
   const dispatch = useDispatch();
   let counting = 0;
 
@@ -106,7 +107,10 @@ const Filters = () => {
 
   return (
     <div className="menu_container">
-      <form className="search"><input type="text" id="search" name="search" /> <button type="submit"><i className="fas fa-search"></i></button> </form>
+      <form className="search">
+      <input value={query} onChange={e => setQuery(e.target.value)} type="search"/>
+        <button type="submit"><i className="fas fa-search"></i></button> 
+      </form>
       <h2>Filtros</h2>
       <hr />
       <h3>Ordenar por modelo</h3>
