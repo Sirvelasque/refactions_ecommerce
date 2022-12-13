@@ -10,10 +10,14 @@
   background-color: #f8f9fd;
 }
 
-input[type="text"],
-input[type="password"] {
+input[name="uname"],
+input[name="pass"] {
   height: 25px;
   border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[name="pass"] {
+  margin-left: 4px;
 }
 
 input[type="submit"] {
@@ -45,4 +49,27 @@ input[type="submit"]:hover {
 .error {
   color: red;
   font-size: 12px;
+}
+
+.login_container {
+  display: flex;
+  position: fixed;
+  top: 40px;
+  right: 24px;
+  background-color: #f8f9fd;
+  border-radius: 10px;
+  border: 3px solid rgb(109, 105, 221);
+  padding: 4px;
+  z-index: 2;
+
+}
+
+.login_container.hide_up {
+  display: none;
+}
+
+.input-container {
+  justify-content: space-between;
+  gap: 10px;
+  margin: 15px;
 }

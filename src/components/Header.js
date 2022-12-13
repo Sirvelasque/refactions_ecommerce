@@ -1,12 +1,18 @@
 import { useState } from "react";
 import Filters from "./Filters";
 import MainMenu from "./menus/mainMenu";
+import Login from "./login";
 import './css/header.css'
 import './css/header850.css'
 
 const Header = () => {
+  const [loginShow, setLoginShow] = useState(false);
   const [menuShow, setMenuShow] = useState(false);
   const [contact, setContact] = useState(false);
+
+  const toggleLogin = () => {
+    setLoginShow(!loginShow);
+  }
   const toggleContact = () => {
     setContact(!contact);
   }
@@ -45,8 +51,8 @@ const Header = () => {
          | 
         <i className="fa-brands fa-whatsapp">(33)5555 5555</i>
       </div>
-      <div className="login_btns">
-        Iniciar sesion | Registrarme
+      <div className="login_btn" onClick={ () => toggleLogin()}>
+      <i className="fa-solid fa-user"></i> Iniciar sesion
       </div>
     </div>
     <div className="header_foot">
@@ -55,6 +61,9 @@ const Header = () => {
     </div>
     <div className="desktop_filters">
     <Filters />
+    </div>
+    <div className={loginShow? "login_container":"login_container hide_up"}>
+      <Login />
     </div>
     </div>
   </header>

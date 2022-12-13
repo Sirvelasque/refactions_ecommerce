@@ -61,7 +61,7 @@ const Login = () => {
           <button type="submit">Entrar</button>
         </div>
       </form>
-      {isSubmitted ? <div>Dentro!</div> : <div>Ingrese a su cuenta para continuar</div>}
+      {isSubmitted ? <div>Dentro!</div> : <div>No tienes cuenta aun? <a href="www.google.com">registrate</a> gratis</div>}
     </div>
   )
 }

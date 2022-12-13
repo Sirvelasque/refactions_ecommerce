@@ -37,6 +37,7 @@
   .desktop_filters {
     position: fixed;
     top:75px;
+    left: 24px;
   }
 
   .desktop_filters .search {
@@ -44,10 +45,10 @@
   }
 
   .desktop_filters .menu_container {
-    width: 20px;
+    width: 24px;
     min-width: fit-content;
     padding-top: 1px;
-    border: 3px solid rgb(109, 105, 221);;
+    border: 3px solid rgb(109, 105, 221);
     background-color: rgb(232, 232, 240);
   }
 
@@ -61,7 +62,7 @@
   }
 
   #filters_plus.hide-l {
-    transform: translate3d(100px, -70vh, 0);
+    transform: translate3d(-10px, -65vh, 0);
     position: fixed;
     z-index: -1;
     width: 260px;
@@ -69,5 +70,9 @@
 
   #sub_filters {
     overflow-y: hidden;
+  }
+
+  .login_btn {
+
   }
 }
